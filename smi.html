@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="cmsmasters website template" />
+		<meta name="keywords" content="html, css, template" />
+		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/styles/prettyPhoto.css" type="text/css" media="screen" />
+		<link id="gFontName" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cuprum:regular,italic,bold,bolditalic" type="text/css" />
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles/ie.css" type="text/css" />
+		<![endif]-->
+		<title>Fritzmeier</title>    
+	</head>
+	<body class="standard simple">
+		<script type="text/javascript"> if (window.jQuery == undefined) document.write( unescape('%3Cscript src="js/jquery-1.6.4.min.js" type="text/javascript"%3E%3C/script%3E') ); </script>
+		<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if (jQuery.browser.msie && jQuery.browser.version < 9){
+					var $windowWidth = jQuery(window).width()+17;
+					var $windowHeight = jQuery(window).height()+17;
+				} else {
+					var $windowWidth = window.innerWidth;
+					var $windowHeight = window.innerHeight;
+				}
+				
+				var $image = jQuery('.bgImage img');
+				var img = new Image();
+				
+				img.src = jQuery($image).attr('src');
+				
+				var intervalId = setInterval(function(){
+					if (img.complete){
+						var $imgWidth = img.width;
+						var $imgHeight = img.height;
+						var $widthFactor = parseFloat($imgWidth/$windowWidth);
+						var $heightFactor = parseFloat($imgHeight/$windowHeight);
+						
+						if ($widthFactor < $heightFactor){
+							jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
+						} else {
+							jQuery($image).css({width:parseInt($imgWidth/$heightFactor)+'px', height:$windowHeight+'px', top:0, left:'-'+parseInt((parseInt($imgWidth/$heightFactor)-$windowWidth)/2)+'px'});
+						}
+						
+						clearInterval(intervalId);
+						LoadImageStart();
+					}
+				}, 50);
+				
+				function LoadImageStart(){
+					$image.parent().fadeIn(500, function(){
+						jQuery(this).css({display:'block'});
+					});
+				}
+				
+				jQuery(window).resize(function(){
+					if (jQuery.browser.msie && jQuery.browser.version < 9){
+						var $windowWidth = jQuery(window).width()+17;
+						var $windowHeight = jQuery(window).height();
+					} else {
+						var $windowWidth = window.innerWidth;
+						var $windowHeight = window.innerHeight;
+					}
+					
+					var $imgWidth = img.width;
+					var $imgHeight = img.height;
+					var $widthFactor = parseFloat($imgWidth/$windowWidth);
+					var $heightFactor = parseFloat($imgHeight/$windowHeight);
+					
+					if ($widthFactor < $heightFactor){
+						jQuery($image).css({width:$windowWidth+'px', height:parseInt($imgHeight/$widthFactor)+'px', top:'-'+parseInt((parseInt($imgHeight/$widthFactor)-$windowHeight)/2)+'px', left:0});
+					} else {
+						jQuery($image).css({width:parseInt($imgWidth/$heightFactor)+'px', height:$windowHeight+'px', top:0, left:'-'+parseInt((parseInt($imgWidth/$heightFactor)-$windowWidth)/2)+'px'});
+					}
+				});
+			});
+		</script>
+		
+<!-- _________________________ Start Background Image __________________________ -->
+		<div class="bgImage">
+			<img src="images/slider/H_01.jpg" alt="" />
+		</div>
+<!-- _________________________ Finish Background Image __________________________ -->
+
+
+<!-- _________________________ Start Page ___________________________ -->
+		<div id="page">
+
+<!-- _________________________ Start Header _________________________ -->
+			<div class="header_wrap">
+				<div id="header">
+					<div class="header_inner">
+						<a class="logo" title="Fritzmeier" href="index.html">
+							<img src="images/fc_logo_250.png" alt="Composite" width="100%" class="logo_text" />
+						</a>	
+						
+<!-- _________________________ Start Navigation _____________________ -->
+						<div class="navigation_wrap">
+							<ul id="navigation">
+								<li class="current_page_item"><a href="smi.html">SMI<span>Sandwich Monocoque Injection</span></a></li>
+								<li><a href="rtm.html">RTM<span>Resin Transfer Moulding</span></a>
+								</li>
+								<li><a href="gallery_motion.html">WPM<span>Wet Pressure Moulding</span></a>
+								
+								</li>
+								<li><a href="sidebar_blogright.html">SMC<span>Sheet Moulding Compund</span></a>
+									
+								</li>
+								<li><a href="contacts.html">SRM<span>Structural Reaction Moulding</span></a></li>
+                                <li><a href="sidebar_blogright.html">LFI<span>Long Fiber Injection</span></a>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="header_arrow_wrap">
+						<a href="#" class="header_arrow"><span></span></a>
+					</div>
+<!-- _________________________ Finish Navigation ____________________ -->
+
+				</div>
+			</div>
+<!-- _________________________ Finish Header ________________________ -->
+
+
+<!-- _________________________ Start Middle _________________________ -->
+			<div id="middle">
+				<div id="home">
+					<h2 class="home">SMI - Sandwich Monocoque Injection</h2>
+				</div>
+ 
+  				<div class="middle_content">
+                
+
+                
+                
+					<!-- <br><div class="entry">
+						<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui, eu viverra nulla magna at massa. Proin eu iaculis ante. Cras ut augue ac arcu dignissim consequat et non odio. Cras facilisis ligula vitae ipsum sollicitudin congue. Donec volutpat consectetur rutrum. Aliquam this is highligh</p>
+						<br />
+						<div class="one_third">
+							<p><img src="images/img_2.jpg" alt=""/></p>
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui</p>
+						</div>
+						<div class="one_third">
+							<p><img src="images/img_3.jpg" alt=""/></p>
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui</p>
+						</div>
+						<div class="one_third last">
+							<p><img src="images/img_4.jpg" alt=""/></p>
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui</p>
+						</div>
+						<div class="cl"></div>
+						<div class="one_third">
+							<p><img src="images/img_5.jpg" alt=""/></p>
+						</div>
+						<div class="two_third last">
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui, eu viverra nulla magna at massa. Proin eu iaculis ante. Cras ut augue ac arcu dignissim consequat et non odio. Cras facilisis ligula vitae ipsum sollicitudin congue. Donec volutpat consectetur rutrum. Aliquam this is highligh Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui, eu viverra nulla magna at massa</p>
+						</div>
+						<div class="cl"></div>
+						<div class="one_half">
+							<p><img src="images/img_6.jpg" alt=""/></p>
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui, eu viverra nulla magna at massa.</p>
+						</div>
+						<div class="one_half last">
+							<p><img src="images/img_7.jpg" alt=""/></p>
+							<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui, eu viverra nulla magna at massa.</p>
+						</div>
+						<div class="cl"></div>
+					</div>
+				</div> -->
+				
+<!-- _________________________ Start Bottom _________________________ -->
+				<!-- <div id="bottom">
+					<div class="widget widget_follow">
+						<div class="one_third">
+							<h4 class="widgettitle">Follow</h4>
+							<ul>
+								<li class="flickr"><a href="#">My Flickr Fotostream</a></li>
+								<li class="facebook"><a href="#">Be my friend on Facebook</a></li>
+								<li class="tumblr"><a href="#">Visit my Tumblr page</a></li>
+								<li class="twitter"><a href="#">Follow me on Twitter</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="widget widget_links">
+						<div class="one_third">
+							<h4 class="widgettitle">Links</h4>
+							<ul>
+								<li><a href="#">Cmsmasters on Themeforest</a></li>
+								<li><a href="cmsmasters.net">Cmsmasters website</a></li>
+								<li><a href="#">Cmsmasters portfolio</a></li>
+								<li><a href="support.cmsmasters.net">Cmsmasters support forums</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="widget widget_custom_comments_entries">
+						<div class="one_third last">
+							<h4 class="widgettitle">Recent Comment</h4>
+							<ul>
+								<li>
+									<p>Lorem ipsum dolor sit amet, this is highlight adipiscing elit. Quisque ultricies, risus sed semper pretium, purus dui auctor dui</p>
+									<strong>David James</strong> on <a href="#" class="transp">Pacifico</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="cl"></div>
+				</div> -->
+<!-- _________________________ Finish Bottom ________________________ -->	
+				
+				
+<!-- _________________________ Start Footer _________________________ -->
+				<div id="footer">
+					<p>&copy; 2016 Georg Fritzmeier GmbH & Co. KG</p>
+				</div>
+<!-- _________________________ Finish Footer ________________________ -->
+
+			</div> 
+<!-- _________________________ Finish Middle ________________________ -->
+
+			<div class="cl"></div>
+		</div>
+<!-- _________________________ Finish Page __________________________ -->
+
+	</body>
+</html>

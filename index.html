@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="cmsmasters website template" />
+		<meta name="keywords" content="html, css, template" />
+		<link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/styles/prettyPhoto.css" type="text/css" media="screen" />
+		<link id="gFontName" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cuprum:regular,italic,bold,bolditalic" type="text/css" />
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/styles/ie.css" type="text/css" />
+		<![endif]-->
+		<title>Fritzmeier Composite</title>
+	</head>
+	<body class="standard simple">
+		<script type="text/javascript"> if (window.jQuery == undefined) document.write( unescape('%3Cscript src="js/jquery-1.6.4.min.js" type="text/javascript"%3E%3C/script%3E') ); </script>
+		<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				if (jQuery.browser.msie && jQuery.browser.version < 9){
+					var $windowWidth = jQuery(window).width()+17;
+					var $windowHeight = jQuery(window).height()+17;
+				} else {
+					var $windowWidth = window.innerWidth;
+					var $windowHeight = window.innerHeight;
+				}
+				
+				jQuery('body').append('<div id="preloaderMotion" />');
+				jQuery('a.header_arrow').addClass('hidden');
+				
+				var $slider = '#sliderMotion';
+				var $preloader = '#preloaderMotion';
+				var $images = jQuery($slider+' li img');
+				var $max = $images.length;
+				
+				$images.each(function(){
+					var img = new Image();
+					
+					img.src = jQuery(this).attr('src');
+					
+					var intervalId = setInterval(function(){
+						if (img.complete){
+							clearInterval(intervalId);
+							
+							$max--;
+							
+							jQuery($preloader).append('<img id="nMotion'+$max+'" src="'+img.src+'" width="60" height="35" alt="" />');
+							jQuery($preloader).find('img#nMotion'+$max).animate({opacity:1}, 500);
+							
+							if ($max == 0){
+								LoadImageStart(jQuery($slider));
+								jQuery($preloader).fadeOut(500, function(){
+									jQuery(this).css({display:'none'});
+									showHideContent();
+								});
+							}
+						}
+					}, 50);
+				});
+				
+				function LoadImageStart(slider){
+					slider.cmsmsMotionSlider({
+						sliderWidth:$windowWidth,
+						sliderHeight:$windowHeight,
+						pauseOnHover:false,
+						showPause:false
+					});
+					
+					jQuery('a[rel="prettyPhoto[bgSlider]"]').prettyPhoto({animationSpeed:'normal', deeplinking:false, social_tools:false});
+				}
+				
+				jQuery(window).resize(function(){
+					if (jQuery.browser.msie && jQuery.browser.version < 9){
+						var $windowWidth = jQuery(window).width()+17;
+						var $windowHeight = jQuery(window).height();
+					} else {
+						var $windowWidth = window.innerWidth;
+						var $windowHeight = window.innerHeight;
+					}
+					
+					jQuery('.cmsmsMotionSliderContainer, .cmsmsMotionSlides, .cmsmsMotionSlides canvas, .cmsmsMotionSlides img, .cmsmsMotionSlides iframe').css({width:$windowWidth+'px', height:$windowHeight+'px'});
+					jQuery('.cmsmsMotionControl').css({height:$windowHeight+'px'});
+					jQuery('.cmsmsMotionNavigation').css({height:parseInt($windowHeight - 195)+'px'});
+				});
+			});
+		</script>
+
+<!-- _________________________ Start Slider __________________________ -->
+		<ul id="sliderMotion">
+			<li data-thumb="images/slider/thumbs/h_01t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_01.jpg" alt="SMI" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>SMI</h1>
+					<p>Sandwich Monocoque Injection</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+			<li data-thumb="images/slider/thumbs/h_02t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_02.jpg" alt="RTM" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>RTM</h1>
+					<p>Resin Transfer Moulding</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+			<li data-thumb="images/slider/thumbs/h_03t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_03.jpg" alt="WPM" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>WPM</h1>
+					<p>Wet Pressure Moulding</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+			<li data-thumb="images/slider/thumbs/h_04t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_04.jpg" alt="SMC" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>SMC</h1>
+					<p>Sheet Moulding Compound</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+			</li>
+            <li data-thumb="images/slider/thumbs/h_05t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_05.jpg" alt="SRM" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>SRM</h1>
+					<p>Structural Reaction Moulding</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+                <li data-thumb="images/slider/thumbs/h_06t.jpg" data-start="center center" data-finish="center center" data-zoom="out" data-animation="10">
+				<img src="images/slider/H_06.jpg" alt="LFI" />
+				<div class="cmsmsSlideCaption" data-top="50">
+					<h1>LFI</h1>
+					<p>Long Fiber Injection</p>
+					<a href="#" class="button btn_2">Zu den Produkten</a>
+				</div>
+                </li>
+		</ul>
+<!-- _________________________ Finish Slider __________________________ -->
+
+
+<!-- _________________________ Start Page ___________________________ -->
+		<div id="page" class="hideContent">
+
+<!-- _________________________ Start Header _________________________ -->
+			<div class="header_wrap">
+				<div id="header">
+					<div class="header_inner">
+						<a class="logo" title="Fritzmeier" href="index.html">
+							<img src="images/fc_logo_250.png" alt="Composite" width="100%" class="logo_text" />
+						</a>	
+						
+<!-- _________________________ Start Navigation _____________________ -->
+						<div class="navigation_wrap">
+							<ul id="navigation">
+								<li><a href="smi.html">SMI<span>Sandwich Monocoque Injection</span></a></li>
+								<li><a href="rtm.html">RTM<span>Resin Transfer Moulding</span></a>
+								</li>
+								<li><a href="gallery_motion.html">WPM<span>Wet Pressure Moulding</span></a>
+								
+								</li>
+								<li><a href="sidebar_blogright.html">SMC<span>Sheet Moulding Compund</span></a>
+									
+								</li>
+								<li><a href="contacts.html">SRM<span>Structural Reaction Moulding</span></a></li>
+                                <li><a href="sidebar_blogright.html">LFI<span>Long Fiber Injection</span></a>
+									
+								</li>
+							</ul>
+						</div>
+<!-- _________________________ Finish Navigation ____________________ -->
+
+					</div>
+					<div class="header_arrow_wrap">
+						<a href="#" class="header_arrow"><span>&nbsp;</span></a>
+					</div>
+				</div>
+			</div>
+<!-- _________________________ Finish Header ________________________ -->
+
+		</div>
+<!-- _________________________ Finish Page __________________________ -->
+
+	</body>
+</html>
