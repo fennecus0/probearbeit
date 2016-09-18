@@ -1,0 +1,152 @@
+﻿.logo-carousel {
+    position: absolute;
+    width: 150px;
+    top: 5%;
+    left: 5%;
+}
+
+.main-page {
+    position: relative !important;
+}
+
+.main {
+    width: 100% !important;
+    height: 100% !important;
+    left: 0 !important;
+}
+
+.main .middle_content {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0;
+    margin: 0;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.arrow .fa-arrow-up {
+    font-size: 60px;
+    color: white;
+    opacity: .7;
+}
+
+.arrow .fa-arrow-up:hover {
+    opacity: 1;
+}
+
+img {
+    vertical-align: middle;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ex-item {
+    position: relative;
+    height: 700px;
+    width: 1000px;
+    display: none;
+    overflow: hidden;
+    border: 0;
+    background-color: #5EBDC4;
+}
+
+.ex-item .round-button {
+    position: absolute;
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+    background: transparent;
+    bottom: 40px;
+    border-radius: 0;
+    right: 40px;
+    cursor: pointer;
+    opacity: .5;
+}
+
+.ex-item:hover .round-button {
+    font-size: 56px;
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.button-hover-transition {
+    -webkit-transition: all 0.5s cubic-bezier(0.42, 0, 0.15, 1.61);
+    -moz-transition: all 0.5s cubic-bezier(0.42, 0, 0.15, 1.61);
+    -ms-transition: all 0.5s cubic-bezier(0.42, 0, 0.15, 1.61);
+    -o-transition: all 0.5s cubic-bezier(0.42, 0, 0.15, 1.61);
+}
+
+
+/*#popupLayout img {
+    border: 7px solid white;
+    width: 725;
+    height: 562;
+}*/
+
+#carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /*top: 0;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    left: 0;*/
+}
+
+.close-btn {
+    position: absolute; 
+    right: -30px;
+    width: 80px; 
+    height: 80px; 
+    top: -30px;
+    background: transparent;
+    color: black;
+    border-radius: 40px;
+    padding-top: 45px; 
+    padding-left: 14px; 
+    font-size: 22px;
+    opacity: .5;
+    transition: all 250ms;
+}
+.close-btn:hover {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    margin-left: 5%;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .5;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.carousel-indicators li:hover, .carousel-indicators li.active {
+    opacity: 1;
+}
+
+
+

@@ -11,7 +11,7 @@ var Froogaloop=function(){function d(a,b,c){c?(e[c]||(e[c]={}),e[c][a]=b):e[a]=b
 
 /*
  * Motion Slider v1.0 - jQuery Image Slider
- * 
+ *
  * (c) Copyright Steven "cmsmasters" Masters
  * http://cmsmastrs.net/
  * For sale on ThemeForest.net
@@ -22,7 +22,7 @@ var Froogaloop=function(){function d(a,b,c){c?(e[c]||(e[c]={}),e[c][a]=b):e[a]=b
 
 /*
  * Copyright (c) 2008 Joel Birch
- * 
+ *
  * Dual licensed under the MIT and GPL licenses:
  * 	http://www.opensource.org/licenses/mit-license.php
  * 	http://www.gnu.org/licenses/gpl.html
@@ -35,12 +35,12 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 jQuery(document).ready(function(){
 	jQuery('ul#navigation').superfish({
-		delay:500, 
-		animation:{opacity:'show', height:'show'}, 
-		speed:'fast', 
-		autoArrows:false, 
-		dropShadows:false 
-	}); 
+		delay:500,
+		animation:{opacity:'show', height:'show'},
+		speed:'fast',
+		autoArrows:false,
+		dropShadows:false
+	});
 });
 
 
@@ -100,7 +100,7 @@ socformat['buzz']	= 'http://www.google.com/reader/link?url={URL}&title={TITLE}&s
 socformat['myspace'] = 'http://www.myspace.com/Modules/PostTo/Pages/?u={URL}';
 socformat['mail']	= 'mailto:to@email.com?SUBJECT={TITLE}&BODY={DESCRIPTION}-{URL}';
 
-jQuery(document).ready(function(){ 
+jQuery(document).ready(function(){
 	jQuery('.social').socicons({
 		icons:'nujij,linkedin,ekudos,digg,sphere,technorati,delicious,furl,netscape,yahoo,google,newsvine,reddit,blogmarks,magnolia,live,tailrank,facebook,twitter,stumbleupon,bligg,symbaloo,misterwong,mail',
 		imagesurl:'images/socicons/'
@@ -130,22 +130,22 @@ jQuery(document).ready(function(){
 			}
 		});
 	}
-	
+
 	jQuery('.standard .header_arrow').live('click', function(){
 		showHideContent();
-		
+
 		return false;
 	});
-	
+
 	jQuery('.vertical .header_arrow').live('click', function(){
 		showHideContent();
-		
+
 		return false;
 	});
-	
+
 	jQuery('.horizon .header_arrow').live('click', function(){
 		showHideContent();
-		
+
 		return false;
 	});
 });
@@ -174,7 +174,7 @@ function showHideContent(){
 			jQuery('.vertical .header_wrap').animate({top:'-1600px'}, 700, 'easeInQuint', function(){
 				jQuery('.vertical .header_arrow').addClass('hidden');
 				jQuery('.vertical .header_arrow_wrap').css({position:'absolute', top:'1600px'});
-				
+
 				jQuery('.vertical .header_arrow').css({top:'-70px'}).animate({top:0}, 300, 'easeInQuint');
 			});
 			jQuery('.vertical #middle').animate({top:'1600px'}, 700, 'easeInQuint', function(){
@@ -184,7 +184,7 @@ function showHideContent(){
 			jQuery('.vertical .header_arrow').animate({top:'-70px'}, 300, 'easeOutQuint', function(){
 				jQuery(this).removeClass('hidden').css({top:0});
 				jQuery('.vertical .header_arrow_wrap').css({position:'relative', top:0});
-				
+
 				jQuery('.vertical .header_wrap').animate({top:0}, 700, 'easeOutQuint');
 				jQuery('.vertical #middle').css({position:'relative'}).animate({top:0}, 700, 'easeOutQuint');
 			});
@@ -198,7 +198,7 @@ function showHideContent(){
 		} else {
 			jQuery('.horizon .header_arrow').animate({top:'430px'}, 300, 'easeOutQuint', function(){
 				jQuery(this).removeClass('hidden').css({top:'14px'});
-				
+
 				jQuery('.horizon .header_wrap').animate({top:0}, 700, 'easeOutQuint');
 				jQuery('.horizon #middle').animate({top:parseInt(jQuery('.horizon .header_wrap').height()+16)+'px'}, 700, 'easeOutQuint', function(){
 					jQuery(this).css({position:'relative'});
@@ -227,7 +227,7 @@ jQuery(document).ready(function(){
 		jQuery(this).parent().find('.tab_content').not(dropDown).slideUp();
 		if (jQuery(this).hasClass('current')){
 			jQuery(this).removeClass('current');
-		} else { 
+		} else {
 			jQuery(this).addClass('current');
 		}
 		dropDown.stop(false,true).slideToggle().css({display:'block'});
@@ -240,9 +240,9 @@ jQuery(document).ready(function(){
 /* Accordion */
 jQuery(document).ready(function(){
 	jQuery('.accordion a.tog').click(function(i){
-		if (jQuery(this).hasClass('current')){ 
+		if (jQuery(this).hasClass('current')){
 			jQuery(this).removeClass('current');
-		} else { 
+		} else {
 			jQuery(this).parent().parent().find('.tog').removeClass('current');
 			jQuery(this).addClass('current');
 		}
@@ -293,7 +293,7 @@ function checkemail(emailaddress){
 	return pattern.test(emailaddress);
 }
 
-jQuery(document).ready(function(){ 
+jQuery(document).ready(function(){
 	jQuery('#contactform a#formsend').click(function(){
 		var $name 	= jQuery('#name').val();
 		var $email 	= jQuery('#email').val();
@@ -303,7 +303,7 @@ jQuery(document).ready(function(){
 		var $contactemail = jQuery('#contactemail').val();
 		var $contacturl = jQuery('#contacturl').val();
 		var $mywebsite = jQuery('#contactwebsite').val();
-		
+
 		if ($name != '' && $name.length < 3){ $nameshort = true; } else { $nameshort = false; }
 		if ($name != '' && $name.length > 30){ $namelong = true; } else { $namelong = false; }
 		if ($email != '' && checkemail($email)){ $emailerror = true; } else { $emailerror = false; }
@@ -311,12 +311,12 @@ jQuery(document).ready(function(){
 		if ($subject != '' && $subject.length > 100){ $subjectlong = true; } else { $subjectlong = false; }
 		if ($url == ''){ $url = 'none'; }
 		if ($message != '' && $message.length < 3){ $messageshort = true; } else { $messageshort = false; }
-		
+
 		jQuery('#contactform .loading').animate({opacity: 1}, 250);
-		
+
 		if ($name != '' && $nameshort != true && $namelong != true && $email != '' && $emailerror != false && $subject != '' && $subjectshort != true && $subjectlong != true && $message != '' && $messageshort != true && $contactemail != '' && $contacturl != '' && $mywebsite != ''){
-			jQuery.post($contacturl, 
-				{type:'form', contactemail:$contactemail, name:$name, email:$email, subject:$subject, website:$url, message:$message, mywebsite:$mywebsite}, 
+			jQuery.post($contacturl,
+				{type:'form', contactemail:$contactemail, name:$name, email:$email, subject:$subject, website:$url, message:$message, mywebsite:$mywebsite},
 				function(data){
 					jQuery('#contactform .loading').animate({opacity: 0}, 250);
 					jQuery('.entry div.contform').fadeOut('slow');
@@ -325,12 +325,12 @@ jQuery(document).ready(function(){
 					jQuery('.entry .box').hide();
 					jQuery('.entry .info_box').fadeIn('fast');
 					jQuery('html, body').animate({scrollTop:0}, 'slow');
-					jQuery('.entry .info_box').delay(5000).fadeOut(1000, function(){ 
+					jQuery('.entry .info_box').delay(5000).fadeOut(1000, function(){
 						jQuery('.entry div.contform').fadeIn('slow');
 					});
 				}
 			);
-			
+
 			return false;
 		} else {
 			jQuery('#contactform .loading').animate({opacity: 0}, 250);
@@ -338,53 +338,53 @@ jQuery(document).ready(function(){
 			jQuery('.entry .error_box').fadeIn('fast');
 			jQuery('html, body').animate({scrollTop:0}, 'slow');
 			jQuery('.entry .error_box').delay(5000).fadeOut('slow');
-			
-			if ($name == ''){ 
-				jQuery('#name').parent().find('div.form_error').hide(); 
-				jQuery('#name').parent().find('div.defaulterror').show(); 
-			} else if ($nameshort == true){ 
-				jQuery('#name').parent().find('div.form_error').hide(); 
-				jQuery('#name').parent().find('div.shorterror').show(); 
-			} else if ($namelong == true){ 
-				jQuery('#name').parent().find('div.form_error').hide(); 
-				jQuery('#name').parent().find('div.longerror').show(); 
-			} else { 
+
+			if ($name == ''){
+				jQuery('#name').parent().find('div.form_error').hide();
+				jQuery('#name').parent().find('div.defaulterror').show();
+			} else if ($nameshort == true){
+				jQuery('#name').parent().find('div.form_error').hide();
+				jQuery('#name').parent().find('div.shorterror').show();
+			} else if ($namelong == true){
+				jQuery('#name').parent().find('div.form_error').hide();
+				jQuery('#name').parent().find('div.longerror').show();
+			} else {
 				jQuery('#name').parent().find('div.form_error').hide();
 			}
-			
-			if ($email == ''){ 
-				jQuery('#email').parent().find('div.form_error').hide(); 
+
+			if ($email == ''){
+				jQuery('#email').parent().find('div.form_error').hide();
 				jQuery('#email').parent().find('div.defaulterror').show();
-			} else if ($emailerror == false){ 
-				jQuery('#email').parent().find('div.form_error').hide(); 
+			} else if ($emailerror == false){
+				jQuery('#email').parent().find('div.form_error').hide();
 				jQuery('#email').parent().find('div.invaliderror').show();
-			} else { 
+			} else {
 				jQuery('#email').parent().find('div.form_error').hide();
 			}
-			
-			if ($subject == ''){ 
-				jQuery('#subject').parent().find('div.form_error').hide(); 
-				jQuery('#subject').parent().find('div.defaulterror').show(); 
-			} else if ($subjectshort == true){ 
-				jQuery('#subject').parent().find('div.form_error').hide(); 
-				jQuery('#subject').parent().find('div.shorterror').show(); 
-			} else if ($subjectlong == true){ 
-				jQuery('#subject').parent().find('div.form_error').hide(); 
-				jQuery('#subject').parent().find('div.longerror').show(); 
-			} else { 
-				jQuery('#subject').parent().find('div.form_error').hide(); 
+
+			if ($subject == ''){
+				jQuery('#subject').parent().find('div.form_error').hide();
+				jQuery('#subject').parent().find('div.defaulterror').show();
+			} else if ($subjectshort == true){
+				jQuery('#subject').parent().find('div.form_error').hide();
+				jQuery('#subject').parent().find('div.shorterror').show();
+			} else if ($subjectlong == true){
+				jQuery('#subject').parent().find('div.form_error').hide();
+				jQuery('#subject').parent().find('div.longerror').show();
+			} else {
+				jQuery('#subject').parent().find('div.form_error').hide();
 			}
-			
-			if ($message == ''){ 
-				jQuery('#message').parent().find('div.form_error').hide(); 
-				jQuery('#message').parent().find('div.defaulterror').show(); 
-			} else if ($messageshort == true){ 
+
+			if ($message == ''){
 				jQuery('#message').parent().find('div.form_error').hide();
-				jQuery('#message').parent().find('div.shorterror').show(); 
-			} else { 
+				jQuery('#message').parent().find('div.defaulterror').show();
+			} else if ($messageshort == true){
+				jQuery('#message').parent().find('div.form_error').hide();
+				jQuery('#message').parent().find('div.shorterror').show();
+			} else {
 				jQuery('#message').parent().find('div.form_error').hide();
 			}
-			
+
 			return false;
 		}
 	});

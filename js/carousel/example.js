@@ -28,6 +28,7 @@ function carouselCreated(e, data) {
     $('.popup-link').click(function(e) {
         var $this = $(this);
         var html = Mustache.to_html($('#popupLayout').html(), $(this).data("content"));
+        console.log('Hi');
         $('#popup').html(html);
 
         $('#popup').popup({
@@ -39,7 +40,7 @@ function carouselCreated(e, data) {
 
 $(document).ready(function() {
 
-    var container = $('#container');
+    var container = $('#carousel');
 
     // fade in effect
     container.css({
@@ -192,4 +193,49 @@ $(document).ready(function() {
     });
     container.on('motionStart', motionStart);
     container.on('motionEnd', motionEnd);
+
+
+
+
+
+    // Carousel Indicators
+    ///////////////////////////////////
+
+    function indicator(){
+
+        var exItem = $('.ex-item'),
+            carousel = $('#carousel'),
+            carouselIndicators = '';
+
+
+
+        for (var i = 0; i < exItem.length; i += 1) {
+
+            carouselIndicators += '<li data-target="#carousel" data-slide-to="' + i + '"></li>';
+
+            console.log(carouselIndicators);
+        }
+
+        carousel.append('<ol class="carousel-indicators""></ol>');
+
+        $('.carousel-indicators').html(carouselIndicators);;
+
+    }
+
+    function clickIndicator(event) {
+
+        var exItem = $(event.target).index(),
+            container = $('#carousel');
+
+        container.theta_carousel('moveTo', exItem);
+
+
+    }
+
+    indicator();
+
+    $('.carousel-indicators li').on('click', function(event){
+        clickIndicator(event);
+    });
+
 });
